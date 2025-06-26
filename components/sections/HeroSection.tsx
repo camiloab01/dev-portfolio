@@ -1,10 +1,12 @@
-"use client"
+'use client'
 
-import HeroLines from "@/public/assets/hero/hero-lines.png"
-import Image from "next/image"
-import SocialLinks from "../SocialLinks"
-import HeroContent from "./HeroContent"
-import HeroTool from "./HeroTool"
+import HeroLines from '@/public/assets/hero/hero-lines.png'
+import Image from 'next/image'
+import SocialLinks from '../SocialLinks'
+import HeroContent from './HeroContent'
+import dynamic from 'next/dynamic'
+
+const HeroTool = dynamic(() => import('./HeroTool'), { ssr: false })
 
 export default function HeroSection() {
   return (

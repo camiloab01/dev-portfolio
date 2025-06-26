@@ -1,11 +1,11 @@
-import { useEffect, useRef } from "react"
-import Code from "@/public/assets/hero/code.png"
-import HeroSpinner from "@/public/assets/hero/hero-spinner.webp"
-import Source from "@/public/assets/hero/source.png"
-import heroLottieData from "@/public/assets/lottie/hero-lottie.json"
-import { gsap } from "gsap"
-import Lottie from "lottie-react"
-import Image from "next/image"
+import { useEffect, useRef } from 'react'
+import Code from '@/public/assets/hero/code.png'
+import HeroSpinner from '@/public/assets/hero/hero-spinner.webp'
+import Source from '@/public/assets/hero/source.png'
+import heroLottieData from '@/public/assets/lottie/hero-lottie.json'
+import { gsap } from 'gsap'
+import Lottie from 'lottie-react'
+import Image from 'next/image'
 
 export default function HeroTool() {
   const firstSpinnerRef = useRef(null)
