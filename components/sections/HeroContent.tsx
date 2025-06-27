@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react"
-import { ArrowRightIcon } from "@radix-ui/react-icons"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-import Link from "next/link"
+import { useEffect, useRef } from 'react'
+import { ArrowRightIcon } from '@radix-ui/react-icons'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import Link from 'next/link'
 
 export default function HeroContent() {
   const sectionRef = useRef(null)
@@ -16,7 +16,7 @@ export default function HeroContent() {
     })
 
     textAnimationTimeline.fromTo(
-      q(".text-animation"),
+      q('.text-animation'),
       {
         y: 100,
       },
@@ -26,13 +26,13 @@ export default function HeroContent() {
       }
     )
     textAnimationTimeline.fromTo(
-      ".bio-animation ",
+      '.bio-animation ',
       {
         scale: 0,
       },
       {
         scale: 1,
-        ease: "back",
+        ease: 'back',
         duration: 0.3,
       }
     )
@@ -45,29 +45,26 @@ export default function HeroContent() {
     >
       <div className="overflow-hidden">
         <div className="text-animation  dark:bg-[linear-gradient(#fff,rgba(255,255,255,.6))] inline-block text-black dark:text-transparent bg-clip-text leading-none text-4xl md:text-6xl font-semibold">
-          It&apos;s Shinn Thant
+          Camilo Aguero Botero
         </div>
       </div>
 
       <div className="overflow-hidden">
         <div className="text-animation text-2xl md:text-4xl font-semibold">
-          <span className="bg-[linear-gradient(#fff,rgba(255,255,255,.6))] inline-block text-transparent bg-clip-text">
-            A
-          </span>{" "}
-          <span className="text-accentColor">Front-End</span>{" "}
+          <span className="text-accentColor">Fullstack</span>{' '}
           <span className="bg-[linear-gradient(#000000,rgba(255,255,255,.6))] dark:bg-[linear-gradient(#fff,rgba(255,255,255,.6))] inline-block text-transparent bg-clip-text">
             Developer
-          </span>
+          </span>{' '}
+          <span className="text-accentColor">☕️</span>
         </div>
       </div>
-
       <div className="w-[300px] md:w-[370px] relative z-30 text-center text-sm dark:bg-[linear-gradient(#fff,rgba(255,255,255,.6))] inline-block text-black dark:text-transparent bg-clip-text">
-        Passionate and detail-oriented frontend developer with a knack for
-        creating visually appealing and user-friendly web interfaces
+        Blending fintech precision with Web3 innovation—I'm a developer focused
+        on delivering fast, intuitive, and user-obsessed products. Built to
+        scale. Shaped by purpose.
       </div>
-
       <div className="bio-animation dark:bg-[linear-gradient(#fff,rgba(255,255,255,.6))] inline-block text-black dark:text-transparent bg-clip-text text-md md:text-lg">
-        Where creativity meets functionality.
+        Ideas, brought to life.
       </div>
 
       <Link

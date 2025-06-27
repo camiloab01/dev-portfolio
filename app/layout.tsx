@@ -1,38 +1,52 @@
-import type { Metadata } from "next"
-import { Analytics } from "@vercel/analytics/react"
-import { Jost } from "next/font/google"
-import { ThemeProvider } from "@/providers/ThemeProvider"
-import Loader from "@/components/Loader"
-import Header from "@/components/layouts/header"
-import "./globals.css"
+import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react'
+import { Jost } from 'next/font/google'
+import { ThemeProvider } from '@/providers/ThemeProvider'
+import Loader from '@/components/Loader'
+import Header from '@/components/layouts/header'
+import './globals.css'
 
-const jost = Jost({ subsets: ["latin"] })
+const jost = Jost({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "ShinThant.Dev",
-  description: "A Frontend Developer",
-  applicationName: "Portfolio",
+  title: 'camiloab01.dev',
+  description: 'Software Developer',
+  applicationName: 'Portfolio',
   openGraph: {
-    type: "website",
-    url: "https://devshinthant.vercel.app/",
-    title: "Shinthant.Dev",
+    type: 'website',
+    url: 'https://www.camiloab01.dev',
+    title: 'camiloab01.dev',
     description:
-      "Portfolio website developed with NextJS, TypeScript, ShadcnUI & GSAP.",
-    siteName: "Portfolio website",
+      'Software Developer based in Chicago, specializing in Web3 technologies and full-stack development.',
+    siteName: 'Portfolio website',
     images: [
       {
-        url: "https://i.ibb.co/m5bYtw6/responsive-showcase.png",
+        url: 'https://ibb.co/BVZRHGFJ',
       },
     ],
   },
   authors: {
-    name: "Shin Thant",
+    name: 'Camilo Aguero',
   },
-  generator: "NextJs",
-  keywords: ["NextJS", "Portfolio", "GSAP", "ShadcnUI"],
-  creator: "Shin Thant",
+  generator: 'NextJs',
+  keywords: [
+    'Portfolio',
+    'Software Developer',
+    'Web3',
+    'Chicago',
+    'Camilo Aguero Botero',
+    'camiloab01',
+    'camiloab01.dev',
+    'React',
+    'NextJS',
+    'TypeScript',
+    'Frontend',
+    'Backend',
+    'Full Stack',
+  ],
+  creator: 'Camilo Aguero',
   icons: {
-    icon: "/favicon.png",
+    icon: '/favicon.ico',
   },
 }
 
@@ -46,7 +60,6 @@ export default function RootLayout({
       <Analytics />
       <body className={jost.className}>
         <Loader />
-
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

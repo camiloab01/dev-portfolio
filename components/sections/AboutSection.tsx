@@ -1,17 +1,17 @@
-"use client"
+'use client'
 
-import { useEffect, useRef } from "react"
-import useScrollActive from "@/hooks/useScrollActive"
-import Circle from "@/public/assets/about/circle.svg"
-import Signs from "@/public/assets/about/signs.svg"
-import Star from "@/public/assets/about/star.svg"
-import Triangle from "@/public/assets/about/triangle.svg"
-import ShinThantImage from "@/public/me-5.jpg"
-import { useSectionStore } from "@/store/section"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-import Image from "next/image"
-import SplitType from "split-type"
+import { useEffect, useRef } from 'react'
+import useScrollActive from '@/hooks/useScrollActive'
+import Circle from '@/public/assets/about/circle.svg'
+import Signs from '@/public/assets/about/signs.svg'
+import Star from '@/public/assets/about/star.svg'
+import Triangle from '@/public/assets/about/triangle.svg'
+import CamiloImage from '@/public/me.png'
+import { useSectionStore } from '@/store/section'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import Image from 'next/image'
+import SplitType from 'split-type'
 
 export default function AboutSection() {
   gsap.registerPlugin(ScrollTrigger)
@@ -21,20 +21,20 @@ export default function AboutSection() {
   useEffect(() => {
     const q = gsap.utils.selector(sectionRef)
 
-    new SplitType(q(".title"), {
-      types: "chars",
-      tagName: "span",
+    new SplitType(q('.title'), {
+      types: 'chars',
+      tagName: 'span',
     })
 
-    gsap.from(q(".title .char"), {
+    gsap.from(q('.title .char'), {
       opacity: 0.3,
       duration: 0.5,
-      ease: "power1.out",
+      ease: 'power1.out',
       stagger: 0.1,
 
       scrollTrigger: {
-        trigger: q(".title"),
-        start: "top center",
+        trigger: q('.title'),
+        start: 'top center',
         scrub: true,
       },
     })
@@ -52,7 +52,7 @@ export default function AboutSection() {
           })
 
           tl.fromTo(
-            q(".image-animation"),
+            q('.image-animation'),
             {
               x: 200,
             },
@@ -62,7 +62,7 @@ export default function AboutSection() {
           )
 
           tl.fromTo(
-            q(".text-animation"),
+            q('.text-animation'),
             {
               y: 100,
             },
@@ -71,8 +71,8 @@ export default function AboutSection() {
             }
           )
 
-          tl.to(q(".experience-count"), {
-            innerText: 2,
+          tl.to(q('.experience-count'), {
+            innerText: 10,
             duration: 0.5,
             snap: {
               innerText: 1,
@@ -80,19 +80,19 @@ export default function AboutSection() {
           })
 
           tl.to(
-            q(".project-count"),
+            q('.web3-count'),
             {
-              innerText: 15,
+              innerText: 4,
               duration: 0.5,
               snap: {
                 innerText: 1,
               },
             },
-            "-=0.3"
+            '-=0.3'
           )
 
           tl.to(
-            q(".user-count"),
+            q('.project-count'),
             {
               innerText: 30,
               duration: 0.5,
@@ -100,7 +100,7 @@ export default function AboutSection() {
                 innerText: 1,
               },
             },
-            "-=0.3"
+            '-=0.3'
           )
         },
       },
@@ -112,7 +112,7 @@ export default function AboutSection() {
   const { setSection } = useSectionStore()
 
   useEffect(() => {
-    aboutSectionOnView ? setSection("#about") : setSection("#home")
+    aboutSectionOnView ? setSection('#about') : setSection('#home')
   }, [aboutSectionOnView, setSection])
 
   return (
@@ -123,7 +123,7 @@ export default function AboutSection() {
     >
       <div className="w-full max-w-[1100px] h-full m-auto flex flex-col items-center gap-24">
         <div className="relative title text-xl md:text-4xl tracking-tight font-medium w-fit dark:text-white">
-          Simplicity is the soul of efficiency.
+          Complexity kills. Simplicity scales.
           <div className="absolute -right-[10px] top-2">
             <Image
               className="w-14 pointer-events-none select-none"
@@ -160,26 +160,13 @@ export default function AboutSection() {
             <div className="flex flex-col items-start gap-4">
               <div className="overflow-hidden">
                 <div className="dark:text-white text-animation">
-                  With over 2 years of experience as a frontend developer, I
-                  specialize in crafting responsive and user-friendly web
-                  applications. I excel in creating intuitive interfaces and
-                  enjoy working in collaborative, agile environments.
-                </div>
-              </div>
-
-              <div className="overflow-hidden">
-                <div className="dark:text-white text-animation">
-                  My Educational background.
-                </div>
-              </div>
-              <div className="flex gap-1 flex-col items-start">
-                <div className="text-accentColor">NCC Education</div>
-                <div className="overflow-hidden">
-                  <div className="dark:text-white text-animation">
-                    Joined Level 3 Program to embark on an enriching educational
-                    journey designed to build a solid foundation in key
-                    subjects.
-                  </div>
+                  A results-driven Software Developer with over 10 years of
+                  software development experience, including significant fintech
+                  and web3 expertise. Demonstrated success in building
+                  highperformance, customer-centric applications using React,
+                  Next.js, Typescript, and Tailwind. Adept at leading project
+                  scopes and promoting robust engineering practices in
+                  fast-paced startup environments.
                 </div>
               </div>
             </div>
@@ -187,28 +174,27 @@ export default function AboutSection() {
             <div className="w-full border-t-accentColor py-5 border-b-accentColor border-t-[0.01px] border-b-[0.01px] flex items-center gap-6 md:gap-6 lg:gap-20">
               <div className="flex flex-col items-center">
                 <div className="text-3xl md:text-4xl font-medium dark:text-white">
-                  <span className="experience-count">0</span>{" "}
-                  <span className="text-accentColor">+</span>
-                </div>
-                <div className="dark:text-white text-sm">Experiences</div>
-              </div>
-
-              <div className="flex flex-col font-medium items-center">
-                <div className="text-3xl md:text-4xl dark:text-white">
-                  <span className="project-count">0</span>{" "}
+                  <span className="experience-count">0</span>{' '}
                   <span className="text-accentColor">+</span>
                 </div>
                 <div className="dark:text-white text-sm">
-                  Completed Projects
+                  Years of experience
                 </div>
+              </div>
+              <div className="flex flex-col font-medium items-center">
+                <div className="text-3xl md:text-4xl dark:text-white">
+                  <span className="web3-count">0</span>{' '}
+                  <span className="text-accentColor">+</span>
+                </div>
+                <div className="dark:text-white text-sm">Years in Web3</div>
               </div>
 
               <div className="flex flex-col font-medium items-center">
                 <div className="text-3xl md:text-4xl dark:text-white">
-                  <span className="user-count">0</span>{" "}
+                  <span className="project-count">0</span>{' '}
                   <span className="text-accentColor">+</span>
                 </div>
-                <div className="dark:text-white text-sm">Contributions</div>
+                <div className="dark:text-white text-sm">Projects</div>
               </div>
             </div>
           </div>
@@ -216,14 +202,13 @@ export default function AboutSection() {
             <div className="relative w-[180px] h-[170px] lg:w-[300px] lg:h-[290px]">
               <div className="w-full h-full bg-accentColor shadow-md rounded-sm absolute -right-3 -bottom-3" />
               <Image
-                className="absolute z-10 object-contain  w-full h-full shadow-sm rounded-sm"
+                className="absolute z-10 object-contain w-full h-full shadow-sm rounded-sm"
                 width={300}
                 height={300}
                 priority
                 alt="shin thant's profile"
-                src={ShinThantImage}
+                src={CamiloImage}
               />
-
               <div className="absolute hidden lg:block -top-12 -right-12">
                 <Image
                   className="pointer-events-auto select-none"

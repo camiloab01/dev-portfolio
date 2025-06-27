@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
-import { useEffect, useRef } from "react"
-import useScrollActive from "@/hooks/useScrollActive"
-import { useSectionStore } from "@/store/section"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-import Link from "next/link"
+import { useEffect, useRef } from 'react'
+import useScrollActive from '@/hooks/useScrollActive'
+import { useSectionStore } from '@/store/section'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import Link from 'next/link'
 
 export default function ContactSection() {
   gsap.registerPlugin(ScrollTrigger)
@@ -20,9 +20,9 @@ export default function ContactSection() {
         scrub: true,
         onEnter: () => {
           gsap.fromTo(
-            q(".title-animation"),
+            q('.title-animation'),
             {
-              y: "200%",
+              y: '200%',
             },
             {
               y: 0,
@@ -30,9 +30,9 @@ export default function ContactSection() {
           )
 
           gsap.fromTo(
-            q(".end-title"),
+            q('.end-title'),
             { scale: 0 },
-            { scale: 1, ease: "back.inOut" }
+            { scale: 1, ease: 'back.inOut' }
           )
         },
       },
@@ -46,7 +46,7 @@ export default function ContactSection() {
   const { setSection } = useSectionStore()
 
   useEffect(() => {
-    contactSectionOnView && setSection("#contact")
+    contactSectionOnView && setSection('#contact')
   }, [contactSectionOnView, setSection])
 
   return (
@@ -72,7 +72,7 @@ export default function ContactSection() {
         <div className="flex flex-col gap-8 items-center">
           <div className="flex items-center gap-4">
             <Link
-              href="https://www.linkedin.com/in/shinn-thant-b90533231"
+              href="https://www.linkedin.com/in/camilo-aguero-botero/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Contact me on linkedin"
@@ -87,7 +87,7 @@ export default function ContactSection() {
             </Link>
 
             <Link
-              href="https://x.com/dev_shinnthant"
+              href="https://x.com/camiloab01"
               aria-label="Contact me on Twitter"
               target="_blank"
               rel="noopener noreferrer"
@@ -109,12 +109,12 @@ export default function ContactSection() {
                 <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
               </svg>
               <div className="text-xs dark:text-white group-hover:scale-105">
-                Twitter
+                X
               </div>
             </Link>
 
             <Link
-              href="https://github.com/devshinthant"
+              href="https://github.com/camiloab01"
               aria-label="Contact me on Github"
               target="_blank"
               rel="noopener noreferrer"
@@ -141,21 +141,20 @@ export default function ContactSection() {
           </div>
           <div className="flex flex-col items-center">
             <div className="text-accentColor text-lg font-semibold">
-              Shin Thant
+              camiloab01
             </div>
             <div className="dark:text-white text-sm">
-              Designer, Developer & Lover
+              Designer, Developer, Builder
             </div>
           </div>
           <div className="overflow-hidden flex justify-center items-center">
             <div className="title-animation w-full md:max-w-[80%] text-center dark:text-gray-400">
-              I&apos;m always excited to connect with like-minded professionals
-              and potential collaborators. Whether you have a project in mind,
-              need assistance, or just want to say hello, feel free to reach
-              out!
+              Open to new ideas, collaborations, and conversations. If you’ve
+              got a project in mind, a challenge to solve, or just want to say
+              hey, let&apos;s connect!
             </div>
           </div>
-          <div className="end-title dark:text-white text-md">
+          {/* <div className="end-title dark:text-white text-md">
             Made with ❤️ by Shin Thant
             <br />
             <br />
@@ -163,7 +162,7 @@ export default function ContactSection() {
             <br />
             <br />
             <br />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

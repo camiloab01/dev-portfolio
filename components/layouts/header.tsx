@@ -1,14 +1,14 @@
-"use client"
+'use client'
 
-import { useEffect, useRef } from "react"
-import navlinks from "@/lib/navConfig"
-import { cn } from "@/lib/utils"
-import { useSectionStore } from "@/store/section"
-import gsap from "gsap"
-import Link from "next/link"
-import ResumeBtn from "../ResumeBtn"
-import ThemeSwitch from "../ThemeSwitch"
-import MobileNav from "./MobileNav"
+import { useEffect, useRef } from 'react'
+import navlinks from '@/lib/navConfig'
+import { cn } from '@/lib/utils'
+import { useSectionStore } from '@/store/section'
+import gsap from 'gsap'
+import Link from 'next/link'
+import ResumeBtn from '../ResumeBtn'
+import ThemeSwitch from '../ThemeSwitch'
+import MobileNav from './MobileNav'
 
 export default function Header() {
   const headerRef = useRef(null)
@@ -17,7 +17,7 @@ export default function Header() {
     gsap.fromTo(
       headerRef.current,
       { top: -120 },
-      { top: 0, duration: 0.7, delay: 2.2, ease: "Power0.easeNone" }
+      { top: 0, duration: 0.7, delay: 2.2, ease: 'Power0.easeNone' }
     )
   }, [])
 
@@ -34,11 +34,11 @@ export default function Header() {
             <Link href="/" className="text-xl">
               <span
                 className={cn(
-                  "dark:text-white hover:text-accentColor cursor-pointer",
-                  section === "#project" && "dark:text-black"
+                  'dark:text-white hover:text-accentColor cursor-pointer',
+                  section === '#project' && 'dark:text-black'
                 )}
               >
-                ShinThant
+                camiloab01
               </span>
               <span className="text-accentColor font-bold">.dev</span>
             </Link>
@@ -51,8 +51,8 @@ export default function Header() {
                   key={link.title}
                   href={link.href}
                   className={cn(
-                    "navlink",
-                    section === "#project" && "dark:text-black"
+                    'navlink',
+                    section === '#project' && 'dark:text-black'
                   )}
                 >
                   {link.title}
