@@ -37,7 +37,7 @@ export default function SocialLinks() {
         <div className="h-24 w-[0.4px] bg-gray-400 group-hover:bg-accentColor "></div>
       </div>
 
-      <div className="hidden md:block absolute bottom-4 right-4">
+      {/* <div className="hidden md:block absolute bottom-4 right-4">
         <Link
           href="#project"
           aria-label="project"
@@ -46,7 +46,7 @@ export default function SocialLinks() {
           <span className="text-sm tracking-widest">View Project</span>
           <ArrowRightIcon />
         </Link>
-      </div>
+      </div> */}
 
       <Link
         href="#about"
