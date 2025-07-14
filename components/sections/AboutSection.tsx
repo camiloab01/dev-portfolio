@@ -122,9 +122,9 @@ export default function AboutSection() {
       className="relative h-full bg-gray-100 dark:bg-[#161D1F] overflow-hidden py-14 px-10 lg:px-[5%]"
     >
       <div className="w-full max-w-[1100px] h-full m-auto flex flex-col items-center gap-24">
-        <div className="relative title text-xl md:text-4xl tracking-tight font-medium w-fit dark:text-white">
+        <div className="relative text-xl md:text-4xl tracking-tight font-medium w-fit dark:text-white">
           Complexity kills. Simplicity scales.
-          <div className="absolute -right-[10px] top-2">
+          <div className="absolute -right-[70px] top-2">
             <Image
               className="w-14 pointer-events-none select-none"
               src={Signs}
