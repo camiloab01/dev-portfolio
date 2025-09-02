@@ -45,7 +45,7 @@ export default function HeroContent() {
     >
       <div className="overflow-hidden">
         <div className="text-animation dark:bg-[linear-gradient(#fff,rgba(255,255,255,.6))] inline-block text-black dark:text-transparent bg-clip-text leading-none text-4xl md:text-6xl font-semibold md:h-20 h-16 text-nowrap">
-          Camilo Aguero Botero
+          Camilo Botero
         </div>
       </div>
 
