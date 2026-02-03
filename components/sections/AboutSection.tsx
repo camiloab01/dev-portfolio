@@ -1,43 +1,43 @@
-'use client'
+"use client";
 
-import { useEffect, useRef } from 'react'
-import useScrollActive from '@/hooks/useScrollActive'
-import Circle from '@/public/assets/about/circle.svg'
-import Signs from '@/public/assets/about/signs.svg'
-import Star from '@/public/assets/about/star.svg'
-import Triangle from '@/public/assets/about/triangle.svg'
-import CamiloImage from '@/public/me.png'
-import { useSectionStore } from '@/store/section'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import Image from 'next/image'
-import SplitType from 'split-type'
+import { useEffect, useRef } from "react";
+import useScrollActive from "@/hooks/useScrollActive";
+import Circle from "@/public/assets/about/circle.svg";
+import Signs from "@/public/assets/about/signs.svg";
+import Star from "@/public/assets/about/star.svg";
+import Triangle from "@/public/assets/about/triangle.svg";
+import CamiloImage from "@/public/me.png";
+import { useSectionStore } from "@/store/section";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
+import SplitType from "split-type";
 
 export default function AboutSection() {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
 
-  const sectionRef = useRef(null)
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    const q = gsap.utils.selector(sectionRef)
+    const q = gsap.utils.selector(sectionRef);
 
-    new SplitType(q('.title'), {
-      types: 'chars',
-      tagName: 'span',
-    })
+    new SplitType(q(".title"), {
+      types: "chars",
+      tagName: "span",
+    });
 
-    gsap.from(q('.title .char'), {
+    gsap.from(q(".title .char"), {
       opacity: 0.3,
       duration: 0.5,
-      ease: 'power1.out',
+      ease: "power1.out",
       stagger: 0.1,
 
       scrollTrigger: {
-        trigger: q('.title'),
-        start: 'top center',
+        trigger: q(".title"),
+        start: "top center",
         scrub: true,
       },
-    })
+    });
 
     gsap.timeline({
       scrollTrigger: {
@@ -49,38 +49,38 @@ export default function AboutSection() {
               stagger: 0.2,
               duration: 0.3,
             },
-          })
+          });
 
           tl.fromTo(
-            q('.image-animation'),
+            q(".image-animation"),
             {
               x: 200,
             },
             {
               x: 0,
-            }
-          )
+            },
+          );
 
           tl.fromTo(
-            q('.text-animation'),
+            q(".text-animation"),
             {
               y: 100,
             },
             {
               y: 0,
-            }
-          )
+            },
+          );
 
-          tl.to(q('.experience-count'), {
+          tl.to(q(".experience-count"), {
             innerText: 10,
             duration: 0.5,
             snap: {
               innerText: 1,
             },
-          })
+          });
 
           tl.to(
-            q('.web3-count'),
+            q(".web3-count"),
             {
               innerText: 4,
               duration: 0.5,
@@ -88,11 +88,11 @@ export default function AboutSection() {
                 innerText: 1,
               },
             },
-            '-=0.3'
-          )
+            "-=0.3",
+          );
 
           tl.to(
-            q('.project-count'),
+            q(".project-count"),
             {
               innerText: 30,
               duration: 0.5,
@@ -100,20 +100,20 @@ export default function AboutSection() {
                 innerText: 1,
               },
             },
-            '-=0.3'
-          )
+            "-=0.3",
+          );
         },
       },
-    })
-  }, [])
+    });
+  }, []);
 
   // Set Active Session
-  const aboutSectionOnView = useScrollActive(sectionRef)
-  const { setSection } = useSectionStore()
+  const aboutSectionOnView = useScrollActive(sectionRef);
+  const { setSection } = useSectionStore();
 
   useEffect(() => {
-    aboutSectionOnView ? setSection('#about') : setSection('#home')
-  }, [aboutSectionOnView, setSection])
+    aboutSectionOnView ? setSection("#about") : setSection("#home");
+  }, [aboutSectionOnView, setSection]);
 
   return (
     <section
@@ -174,7 +174,7 @@ export default function AboutSection() {
             <div className="w-full border-t-accentColor py-5 border-b-accentColor border-t-[0.01px] border-b-[0.01px] flex items-center gap-6 md:gap-6 lg:gap-20">
               <div className="flex flex-col items-center">
                 <div className="text-3xl md:text-4xl font-medium dark:text-white">
-                  <span className="experience-count">0</span>{' '}
+                  <span className="experience-count">0</span>{" "}
                   <span className="text-accentColor">+</span>
                 </div>
                 <div className="dark:text-white text-sm">
@@ -183,7 +183,7 @@ export default function AboutSection() {
               </div>
               <div className="flex flex-col font-medium items-center">
                 <div className="text-3xl md:text-4xl dark:text-white">
-                  <span className="web3-count">0</span>{' '}
+                  <span className="web3-count">0</span>{" "}
                   <span className="text-accentColor">+</span>
                 </div>
                 <div className="dark:text-white text-sm">Years in Web3</div>
@@ -191,7 +191,7 @@ export default function AboutSection() {
 
               <div className="flex flex-col font-medium items-center">
                 <div className="text-3xl md:text-4xl dark:text-white">
-                  <span className="project-count">0</span>{' '}
+                  <span className="project-count">0</span>{" "}
                   <span className="text-accentColor">+</span>
                 </div>
                 <div className="dark:text-white text-sm">Projects</div>
@@ -245,7 +245,7 @@ export default function AboutSection() {
         <TechStack />
       </div>
     </section>
-  )
+  );
 }
 
 const TechStack = () => {
@@ -399,11 +399,29 @@ const TechStack = () => {
             strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M4.53 17.05l6.15 -11.72h-.02c.38 -.74 1.28 -1.02 2.01 -.63c.26 .14 .48 .36 .62 .62l1.06 2.01" />
-            <path d="M15.47 6.45c.58 -.59 1.53 -.59 2.11 -.01c.22 .22 .36 .5 .41 .81l1.5 9.11c.1 .62 -.2 1.24 -.76 1.54l-6.07 2.9c-.46 .25 -1.01 .26 -1.46 0l-6.02 -2.92c-.55 -.31 -.85 -.92 -.75 -1.54l1.96 -12.04c.12 -.82 .89 -1.38 1.7 -1.25c.46 .07 .87 .36 1.09 .77l1.24 1.76" />
-            <path d="M4.57 17.18l10.93 -10.68" />
+            <path d="M6 12l6 -9l6 9l-6 9l-6 -9" />
+            <path d="M6 12l6 -3l6 3l-6 2l-6 -2" />
           </svg>
-          <div className="dark:text-white text-lg font-medium">Firebase</div>
+          <div className="dark:text-white text-lg font-medium">Web3</div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            className="stroke-black dark:stroke-white"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 9v8.044a2 2 0 0 1 -2.996 1.734l-1.568 -.9a3 3 0 0 1 -1.436 -2.561v-6.635a3 3 0 0 1 1.436 -2.56l6 -3.667a3 3 0 0 1 3.128 0l6 3.667a3 3 0 0 1 1.436 2.561v6.634a3 3 0 0 1 -1.436 2.56l-6 3.667a3 3 0 0 1 -3.128 0" />
+            <path d="M17 9h-3.5a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 1 0 3h-3.5" />
+          </svg>
+          <div className="dark:text-white text-lg font-medium">NodeJS</div>
         </div>
       </div>
 
@@ -429,7 +447,7 @@ const TechStack = () => {
             <path d="M11 12v6" />
             <path d="M21 19v-14a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2z" />
           </svg>
-          j<div className="dark:text-white text-lg font-medium">TypeScript</div>
+          <div className="dark:text-white text-lg font-medium">TypeScript</div>
         </div>
 
         <div className="flex items-center gap-2">
@@ -542,7 +560,7 @@ const TechStack = () => {
             <path d="M20 16m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0" />
             <path d="M20 8m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0" />
           </svg>
-          <div className="dark:text-white text-lg font-medium">GrapQL</div>
+          <div className="dark:text-white text-lg font-medium">GraphQL</div>
         </div>
 
         <div className="flex items-center gap-2">
@@ -558,13 +576,31 @@ const TechStack = () => {
             strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M4.53 17.05l6.15 -11.72h-.02c.38 -.74 1.28 -1.02 2.01 -.63c.26 .14 .48 .36 .62 .62l1.06 2.01" />
-            <path d="M15.47 6.45c.58 -.59 1.53 -.59 2.11 -.01c.22 .22 .36 .5 .41 .81l1.5 9.11c.1 .62 -.2 1.24 -.76 1.54l-6.07 2.9c-.46 .25 -1.01 .26 -1.46 0l-6.02 -2.92c-.55 -.31 -.85 -.92 -.75 -1.54l1.96 -12.04c.12 -.82 .89 -1.38 1.7 -1.25c.46 .07 .87 .36 1.09 .77l1.24 1.76" />
-            <path d="M4.57 17.18l10.93 -10.68" />
+            <path d="M6 12l6 -9l6 9l-6 9l-6 -9" />
+            <path d="M6 12l6 -3l6 3l-6 2l-6 -2" />
           </svg>
-          <div className="dark:text-white text-lg font-medium">Firebase</div>
+          <div className="dark:text-white text-lg font-medium">Web3</div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            className="stroke-black dark:stroke-white"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 9v8.044a2 2 0 0 1 -2.996 1.734l-1.568 -.9a3 3 0 0 1 -1.436 -2.561v-6.635a3 3 0 0 1 1.436 -2.56l6 -3.667a3 3 0 0 1 3.128 0l6 3.667a3 3 0 0 1 1.436 2.561v6.634a3 3 0 0 1 -1.436 2.56l-6 3.667a3 3 0 0 1 -3.128 0" />
+            <path d="M17 9h-3.5a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 1 0 3h-3.5" />
+          </svg>
+          <div className="dark:text-white text-lg font-medium">NodeJS</div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
