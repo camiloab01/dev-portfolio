@@ -1,27 +1,26 @@
-'use client'
+"use client";
 
-import { useEffect, useRef } from 'react'
-import navlinks from '@/lib/navConfig'
-import { cn } from '@/lib/utils'
-import { useSectionStore } from '@/store/section'
-import gsap from 'gsap'
-import Link from 'next/link'
-import ResumeBtn from '../ResumeBtn'
-import ThemeSwitch from '../ThemeSwitch'
-import MobileNav from './MobileNav'
+import { useEffect, useRef } from "react";
+import navlinks from "@/lib/navConfig";
+import { cn } from "@/lib/utils";
+import { useSectionStore } from "@/store/section";
+import gsap from "gsap";
+import Link from "next/link";
+import ResumeBtn from "../ResumeBtn";
+import MobileNav from "./MobileNav";
 
 export default function Header() {
-  const headerRef = useRef(null)
+  const headerRef = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
       headerRef.current,
       { top: -120 },
-      { top: 0, duration: 0.7, delay: 2.2, ease: 'Power0.easeNone' }
-    )
-  }, [])
+      { top: 0, duration: 0.7, delay: 2.2, ease: "Power0.easeNone" },
+    );
+  }, []);
 
-  const { section } = useSectionStore()
+  const { section } = useSectionStore();
 
   return (
     <header
@@ -34,8 +33,8 @@ export default function Header() {
             <Link href="/" className="text-xl">
               <span
                 className={cn(
-                  'dark:text-white hover:text-accentColor cursor-pointer',
-                  section === '#project' && 'dark:text-black'
+                  "dark:text-white hover:text-accentColor cursor-pointer",
+                  section === "#project" && "dark:text-black",
                 )}
               >
                 camiloab01
@@ -51,8 +50,8 @@ export default function Header() {
                   key={link.title}
                   href={link.href}
                   className={cn(
-                    'navlink',
-                    section === '#project' && 'dark:text-black'
+                    "navlink",
+                    section === "#project" && "dark:text-black",
                   )}
                 >
                   {link.title}
@@ -62,11 +61,10 @@ export default function Header() {
           </div>
           <div className="col-span-4 flex items-center justify-end gap-2 md:gap-10">
             <ResumeBtn />
-            <ThemeSwitch />
             <MobileNav />
           </div>
         </div>
       </div>
     </header>
-  )
+  );
 }

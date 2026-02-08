@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Jost } from "next/font/google";
 import Script from "next/script";
-import { ThemeProvider } from "@/providers/ThemeProvider";
 import Loader from "@/components/Loader";
 import Header from "@/components/layouts/header";
 import "./globals.css";
@@ -57,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-ZVJDG3WKDN"
         strategy="afterInteractive"
@@ -73,15 +72,8 @@ export default function RootLayout({
       <Analytics />
       <body className={jost.className}>
         <Loader />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          {children}
-        </ThemeProvider>
+        <Header />
+        {children}
       </body>
     </html>
   );
