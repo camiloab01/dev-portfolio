@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { Jost } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import Loader from "@/components/Loader";
 import Header from "@/components/layouts/header";
 import "./globals.css";
 
-const jost = Jost({ subsets: ["latin"] });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "camiloab01.dev",
@@ -70,7 +70,7 @@ export default function RootLayout({
         `}
       </Script>
       <Analytics />
-      <body className={jost.className}>
+      <body className={jetbrainsMono.className}>
         <Loader />
         <Header />
         {children}
