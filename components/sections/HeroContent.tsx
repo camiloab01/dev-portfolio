@@ -1,42 +1,45 @@
-import { useEffect, useRef } from 'react'
-import { ArrowRightIcon } from '@radix-ui/react-icons'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import Link from 'next/link'
+"use client";
+
+import { useEffect, useRef } from "react";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Link from "next/link";
+import TypewriterText from "../TypewriterText";
 
 export default function HeroContent() {
-  const sectionRef = useRef(null)
-  const q = gsap.utils.selector(sectionRef)
+  const sectionRef = useRef(null);
+  const q = gsap.utils.selector(sectionRef);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(ScrollTrigger);
 
     const textAnimationTimeline = gsap.timeline({
       defaults: { stagger: 0.2, duration: 0.3 },
-    })
+    });
 
     textAnimationTimeline.fromTo(
-      q('.text-animation'),
+      q(".text-animation"),
       {
         y: 100,
       },
       {
         y: 0,
         delay: 2.2,
-      }
-    )
+      },
+    );
     textAnimationTimeline.fromTo(
-      '.bio-animation ',
+      ".bio-animation ",
       {
         scale: 0,
       },
       {
         scale: 1,
-        ease: 'back',
+        ease: "back",
         duration: 0.3,
-      }
-    )
-  }, [q])
+      },
+    );
+  }, [q]);
 
   return (
     <div
@@ -45,16 +48,23 @@ export default function HeroContent() {
     >
       <div className="overflow-hidden">
         <div className="text-animation dark:bg-[linear-gradient(#fff,rgba(255,255,255,.6))] inline-block text-black dark:text-transparent bg-clip-text leading-none text-4xl md:text-6xl font-semibold md:h-20 h-16 text-nowrap">
-          Camilo Botero
+          <TypewriterText
+            text="Camilo Botero"
+            delay={80}
+            startDelay={2200}
+            loopInterval={5000}
+            className="text-transparent"
+            cursorClassName="text-accentColor"
+          />
         </div>
       </div>
 
       <div className="overflow-hidden">
         <div className="text-animation text-2xl md:text-4xl font-semibold">
-          <span className="text-accentColor">Fullstack</span>{' '}
+          <span className="text-accentColor">Fullstack</span>{" "}
           <span className="bg-[linear-gradient(#000000,rgba(255,255,255,.6))] dark:bg-[linear-gradient(#fff,rgba(255,255,255,.6))] inline-block bg-clip-text dark:text-transparent">
             Developer
-          </span>{' '}
+          </span>{" "}
           <span className="text-accentColor">☕️</span>
         </div>
       </div>
@@ -83,5 +93,5 @@ export default function HeroContent() {
         </div>
       </Link>
     </div>
-  )
+  );
 }
